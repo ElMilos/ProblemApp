@@ -1,0 +1,10 @@
+services:
+  db:
+    image: postgres:16
+    container_name: pg_local
+    environment:
+      POSTGRES_DB: appdb
+      POSTGRES_USER: appuser
+      POSTGRES_PASSWORD: secret
+    ports:
+      - "5432:5432"
