@@ -1,4 +1,13 @@
 package ProblemApp.demo.dto;
 
-public class IssueDto {
-}
+import ProblemApp.demo.Enums.IssueStatus;
+import ProblemApp.demo.Enums.Priority;
+
+public record IssueDto(Long id,
+                       String title,
+                       String description,
+                       Priority priority,
+                       IssueStatus status,
+                       Long assigneeId,
+                       Long creatorId)
+{ }
