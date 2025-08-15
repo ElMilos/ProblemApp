@@ -41,7 +41,6 @@ public class Issue extends BaseEntity {
         this.title = title;
         this.description = description;
         this.priority = priority;
-        this.status = IssueStatus.OPEN;
         this.createdBy = createdBy;
     }
 

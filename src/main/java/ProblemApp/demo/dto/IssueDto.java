@@ -9,5 +9,7 @@ public record IssueDto(Long id,
                        Priority priority,
                        IssueStatus status,
                        Long assigneeId,
-                       Long creatorId)
+                       Long creatorId,
+                       String createdTime,
+                       String updatedTime)
 { }

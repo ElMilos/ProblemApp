@@ -90,4 +90,7 @@ public class IssueService {
         return issues.findAll(spec, pageable);
     }
 
+    public <T> Page<Issue> list(IssueStatus status, Priority priority, Long assigneeId, Instant fromI, Instant toI, int page, int size, Sort s) {
+        return null;
+    }
 }
