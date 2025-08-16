@@ -35,7 +35,7 @@ public class IssueChangeState {
     private User changedBy;
 
     @Column(nullable = false)
-    private Instant changedNext = Instant.now();
+    private Instant changedAtTime = Instant.now();
 
     public IssueChangeState() {
     }
@@ -47,5 +47,69 @@ public class IssueChangeState {
         this.noteType = noteType;
         this.message = message;
         this.changedBy = by;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Issue getIssue() {
+        return issue;
+    }
+
+    public void setIssue(Issue issue) {
+        this.issue = issue;
+    }
+
+    public IssueStatus getToStatus() {
+        return toStatus;
+    }
+
+    public void setToStatus(IssueStatus toStatus) {
+        this.toStatus = toStatus;
+    }
+
+    public IssueStatus getFromStatus() {
+        return fromStatus;
+    }
+
+    public void setFromStatus(IssueStatus fromStatus) {
+        this.fromStatus = fromStatus;
+    }
+
+    public String getNoteType() {
+        return noteType;
+    }
+
+    public void setNoteType(String noteType) {
+        this.noteType = noteType;
+    }
+
+    public User getChangedBy() {
+        return changedBy;
+    }
+
+    public void setChangedBy(User changedBy) {
+        this.changedBy = changedBy;
+    }
+
+    public Instant getChangedAtTime() {
+        return changedAtTime;
+    }
+
+    public void setChangedAtTime(Instant changedNext) {
+        this.changedAtTime = changedNext;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

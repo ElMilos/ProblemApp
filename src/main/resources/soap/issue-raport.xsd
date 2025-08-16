@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://problemapp.demo/report"
+           xmlns="http://problemapp.demo/report"
+           elementFormDefault="qualified">
+
+    <xs:simpleType name="Status">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="OPEN"/>
+            <xs:enumeration value="IN_PROGRESS"/>
+            <xs:enumeration value="RESOLVED"/>
+            <xs:enumeration value="CLOSED"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="StatusCount">
+        <xs:sequence>
+            <xs:element name="status" type="Status"/>
+            <xs:element name="count" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GetStatusCountRequestType">
+        <xs:sequence>
+            <xs:element name="from" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="to" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="basedOn" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GetStatusCountResponseType">
+        <xs:sequence>
+            <xs:element name="item" type="StatusCount" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="GetStatusCountRequest" type="GetStatusCountRequestType"/>
+    <xs:element name="GetStatusCountResponse" type="GetStatusCountResponseType"/>
+</xs:schema>
